@@ -233,6 +233,81 @@ hr {
 }
 .cta-button:hover { background: var(--gold) !important; color: #fff !important; }
 
+/* Invite the Animal In — rich rabbit-hole CTA module */
+.animal-cta {
+  margin: 64px 0 24px;
+  padding: 36px 32px 32px;
+  background: linear-gradient(180deg, rgba(139,58,58,0.04), rgba(184,134,11,0.03));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.animal-cta-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.animal-cta-headline {
+  font-family: 'Charter', serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  color: var(--text);
+}
+.animal-cta-intro {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.rabbit-hole {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.rabbit-hole-item {
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.15s;
+  display: block;
+}
+.rabbit-hole-item:hover {
+  background: rgba(255,255,255,0.95);
+  border-color: var(--accent-soft);
+  transform: translateY(-1px);
+}
+.rabbit-hole-item .rh-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.rabbit-hole-item .rh-title {
+  font-family: 'Charter', serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.rabbit-hole-item .rh-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 /* Newsletter inline */
 .newsletter {
   margin: 48px 0;
