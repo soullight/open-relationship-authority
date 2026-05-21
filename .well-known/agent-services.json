@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.x402.org/agent-services/v1.json",
+  "version": 1,
+  "publisher": {
+    "name": "Open Relationship Authority",
+    "url": "https://open-relationship-authority.com",
+    "operator": "Lawrence Lanoff",
+    "imprint": "The Naked Press",
+    "contact": "editorial@open-relationship-authority.com",
+    "description": "The non-tribal field guide to partnership architecture for people who have outgrown the scripts. By Lawrence Lanoff."
+  },
+  "protocol": { "x402Version": 1 },
+  "discovery": {
+    "catalogEndpoint": "https://api.open-relationship-authority.com/api/services",
+    "wellKnownUrl": "https://open-relationship-authority.com/.well-known/agent-services.json"
+  },
+  "paymentMethods": [
+    { "scheme": "lightning", "network": "bitcoin", "asset": "BTC", "minUnit": "satoshi", "status": "active" }
+  ],
+  "services": [],
+  "plannedServices": [],
+  "agentNotes": "Open Relationship Authority is being wired into the agent-to-agent payment graph. Endpoints will follow HTTP 402 (x402) at https://api.open-relationship-authority.com/api/unlock/:slug. No services live yet; check back as content lands."
+}
