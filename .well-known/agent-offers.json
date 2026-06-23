@@ -1,0 +1,140 @@
+{
+  "$schema": "https://aop.dev/schema/offer-manifest/v0.json",
+  "aopVersion": "0",
+  "publisher": {
+    "name": "The Open Relationship Blueprint",
+    "url": "https://theopenrelationshipblueprint.com",
+    "operator": "Lawrence Lanoff",
+    "did": "did:web:theopenrelationshipblueprint.com",
+    "agentId": "did:web:theopenrelationshipblueprint.com",
+    "contact": "hello@tantra-authority.com",
+    "description": "Open relationships and ethical non-monogamy without the mythology — the complete system for opening a relationship without blowing it up. Published by The Naked Press.",
+    "advertisedBy": {
+      "name": "Ad Agency for Agents",
+      "url": "https://adagencyforagents.com",
+      "did": "did:web:ad-agency-for-agents.pages.dev",
+      "note": "Indexed by the Ad Agency for Agents per AOP."
+    }
+  },
+  "paymentMethods": [
+    {
+      "scheme": "exact",
+      "network": "fiat",
+      "asset": "USD",
+      "unit": "cent",
+      "processor": "clover",
+      "status": "live"
+    },
+    {
+      "scheme": "exact",
+      "network": "base",
+      "asset": "USDC",
+      "unit": "atomic",
+      "status": "live"
+    }
+  ],
+  "offers": [
+    {
+      "offerId": "urn:aop:theopenrelationshipblueprint.com:blueprint-course",
+      "capability": {
+        "name": "The Open Relationship Blueprint — complete course",
+        "description": "18 video modules (with audio) + bonuses: safety, boundaries, the difficult-conversations formula, handling jealousy, ownership vs. openship. Instant digital delivery, lifetime access. Same delivery + agent-payable rail as the Tantra Authority catalog (product id open-relationship-blueprint).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "productId": {
+              "type": "string",
+              "const": "open-relationship-blueprint"
+            },
+            "buyerEmail": {
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "accessUrl": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "intentTags": [
+        "intent:content.acquire.course",
+        "intent:education.acquire.relationships",
+        "intent:relationships.open.non-monogamy",
+        "intent:commerce.purchase.digital-good"
+      ],
+      "price": [
+        {
+          "scheme": "exact",
+          "network": "fiat",
+          "asset": "USD",
+          "amount": "19700",
+          "unit": "cent"
+        },
+        {
+          "scheme": "exact",
+          "network": "base",
+          "asset": "USDC",
+          "amount": "1970000000",
+          "unit": "atomic",
+          "priceSource": "https://api.tantra-authority.com/api/products"
+        }
+      ],
+      "payment": {
+        "type": "hosted-checkout",
+        "processor": "clover",
+        "humanCheckoutUrl": "https://tantra-authority.com/checkout.html?product=open-relationship-blueprint",
+        "x402Endpoint": "https://api.tantra-authority.com/api/x402/open-relationship-blueprint",
+        "x402Version": 1,
+        "ap2MandateRequired": false,
+        "note": "Agents pay with x402: GET the x402Endpoint → HTTP 402 with a USDC-on-Base payTo → pay → retry with X-Payment {network:'base',txHash} → on-chain verified → real access link returned. Humans use Clover checkout."
+      },
+      "sla": {
+        "availabilityPct": 99.9,
+        "refundPolicy": "30-day, no-questions money-back guarantee.",
+        "escrow": "none",
+        "fulfillment": "instant digital delivery + recoverable access link"
+      },
+      "trust": {
+        "agentId": "did:web:theopenrelationshipblueprint.com",
+        "attestations": [
+          {
+            "type": "aop:Publisher",
+            "issuer": "did:web:theopenrelationshipblueprint.com",
+            "claim": "Published by The Naked Press (LK Publishing, LLC). Author: Lawrence Lanoff.",
+            "proof": "https://theopenrelationshipblueprint.com/about.html"
+          },
+          {
+            "type": "aop:Guarantee",
+            "issuer": "did:web:theopenrelationshipblueprint.com",
+            "claim": "30-day no-questions money-back guarantee.",
+            "proof": "https://tantra-authority.com/refunds.html"
+          }
+        ]
+      },
+      "performance": {
+        "catalogSource": "https://api.tantra-authority.com/api/products",
+        "aggregateScore": {
+          "note": "Delivered + agent-payable via the proven Tantra Authority x402 rail."
+        }
+      },
+      "terms": {
+        "usageRights": "Personal digital license. Adults.",
+        "humanCheckoutUrl": "https://theopenrelationshipblueprint.com/shop.html"
+      },
+      "validUntil": "2026-12-31T00:00:00Z",
+      "signature": {
+        "alg": "ed25519",
+        "keyId": "did:web:theopenrelationshipblueprint.com#key-1",
+        "canonicalization": "jcs",
+        "value": "r3DxKyUJx43gKS8iGworSf_3fO_hwi4yl30hRwaKBiwjWl-I61xLnN3viJlFUplBY2uvnjbKIfCMjFetH9GrBQ",
+        "payloadDigestSha256": "6f8ea77da25a4673a388d52b2f7b4c59c817a2651540176dffc8e928cda0d19d",
+        "note": "Detached ed25519 over the JCS-canonicalized offer (minus signature). Verify via the publisher's did:web /.well-known/did.json."
+      }
+    }
+  ],
+  "agentNotes": "AOP-native offer for The Open Relationship Blueprint. Agent-payable via the Tantra Authority x402 rail (product open-relationship-blueprint). Indexed by the Ad Agency for Agents (https://adagencyforagents.com). Spec: https://adagencyforagents.com/PROTOCOL_v0.md."
+}
